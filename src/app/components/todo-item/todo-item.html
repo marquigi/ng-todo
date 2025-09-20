@@ -1,0 +1,11 @@
+@if (todo) {
+<div class="d-flex justify-content-between">
+    <span [ngClass]="{'text-decoration-line-through': todo.completed }">{{ todo.text }}</span>
+    <!-- Questo codice usa `ngClass` per applicare uno stile CSS condizionale a un elemento. -->
+    <!-- Aggiunge la classe `text-decoration-line-through` (testo barrato) se l'attività (`todo.completed`) è completata. -->
+    <!-- Serve per mostrare visivamente che un'attività è stata completata, ad esempio in una lista di attività. -->
+    <button type="button" class="btn btn-success">
+        <i class="bi bi-check"></i>
+    </button>
+</div>
+}

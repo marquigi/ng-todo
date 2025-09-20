@@ -1,0 +1,8 @@
+<div class="list-group">
+    @for (t of todos; track $index) {
+    <app-todo-item [todo]="t" class="list-group-item"></app-todo-item>
+    }
+    <!-- Usa un ciclo `*ngFor` per scorrere l'array `todos` e creare un elemento `<app-todo-item>` per ogni attività. -->
+    <!-- La classe `list-group` dà uno stile alla lista (es. aspetto ordinato). -->
+    <!-- `[todo]="t"` passa i dati di ogni attività (l'oggetto `t`) al componente `<app-todo-item>` per mostrarne i dettagli. -->
+</div>
