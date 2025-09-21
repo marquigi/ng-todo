@@ -22,4 +22,8 @@ export class TodoList implements OnInit {
   // Nel metodo `ngOnInit`:
   // - Mostra un messaggio in console ("TodoList Loaded") per confermare che il componente è caricato.
   // - Imposta la lista delle attività (`todos`) usando i dati di `TODOS` per popolare l'elenco delle attività.
+
+  completa(id: number) {
+    console.log("Richiesta completamento todo con id:", id);
+  }
 }
