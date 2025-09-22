@@ -24,4 +24,5 @@
     completa(dato: any) { console.log(dato); } // Es. stampa "Attività finita" -->
 </div>
 <hr>
-<app-todo-add></app-todo-add>
+<app-todo-add (onRichiestaInserimento)="inserisciNuovoTodo($event)"></app-todo-add>
+<!-- // Serve commento -->

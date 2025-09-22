@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
     <input type="text" class="form-control" placeholder="Aggiungi alla lista Todo" [(ngModel)]="testo">
   <!-- [(ngModel)]="testo" in Angular implementa il two-way data binding, sincronizzando bidirezionalmente il valore dell'input con la proprietà 'testo' definita nella classe del componente. Quando l'utente scrive nell'input, 'testo' si aggiorna, e viceversa. -->
     {{ testo }}
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary" (click)="richiediInserimento()">
       <i class="bi bi-plus"></i>
     </button>
   </div>
@@ -19,4 +19,14 @@ import { FormsModule } from '@angular/forms';
 })
 export class TodoAdd {
   testo = "";
+
+  onRichiestaInserimento = output<string>();
+  // Evento output serve a far comunicare il figlio con il genitore, specificando che tipo di dato viene passato (in questo caso un oggetto di tipo stringa).
+
+  richiediInserimento() {
+    this.onRichiestaInserimento.emit(this.testo);
+    // Emette (Invia) l'evento verso il genitore passando il prodotto come dato
+
+    this.testo = ""; // Cancello il contenuto
+  }
 }

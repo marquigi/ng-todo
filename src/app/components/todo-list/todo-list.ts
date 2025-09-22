@@ -36,8 +36,23 @@ export class TodoList implements OnInit {
       todoDaCompletare.completed = !todoDaCompletare.completed;
       // Inverte lo stato del todo (da completato a non completato o viceversa).
     }
+
   }
 
+  inserisciNuovoTodo(testo: string) {
+    // Qui ci sarà la richiesta ajax per inserire il todo 
+    const ids: number[] = this.todos.map(t => t.id); // Transformo l'array di todos in array di id ( numbers )
+    // Serve commento (perchè?)
 
+    const nuovoId = Math.max(...ids) + 1
+    // Serve commento
+
+    const nuovoTodo: Todo = {
+      id: nuovoId,
+      text: testo,
+      completed: false
+    }
+    // Serve commento
+  }
 
 }
