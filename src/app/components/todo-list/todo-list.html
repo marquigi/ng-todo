@@ -5,4 +5,21 @@
     <!-- Usa un ciclo `*ngFor` per scorrere l'array `todos` e creare un elemento `<app-todo-item>` per ogni attività. -->
     <!-- La classe `list-group` dà uno stile alla lista (es. aspetto ordinato). -->
     <!-- `[todo]="t"` passa i dati di ogni attività (l'oggetto `t`) al componente `<app-todo-item>` per mostrarne i dettagli. -->
+    <!-- Collega un evento "richiestaCompletamento" da un componente figlio a un metodo "completa" nel genitore. Quando il
+    figlio scatena l'evento, il genitore esegue "completa" con i dati passati ($event).
+
+    COME FUNZIONA:
+    - FIGLIO: Definisce un evento con @Output() e lo emette con dati (es. emit('Fatto!')).
+    - GENITORE: Ascolta l'evento nel template e usa il metodo completa per gestire i dati.
+
+    ESEMPIO:
+    FIGLIO (TypeScript):
+    @Output() richiestaCompletamento = new EventEmitter();
+    onClick() { this.richiestaCompletamento.emit('Attività finita'); }
+
+    GENITORE (HTML):
+    <app-figlio (onRichiestaCompletamento)="completa($event)"></app-figlio>
+
+    GENITORE (TypeScript):
+    completa(dato: any) { console.log(dato); } // Es. stampa "Attività finita" -->
 </div>

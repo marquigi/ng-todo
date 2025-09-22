@@ -19,8 +19,7 @@ export class TodoItem {
   // Definizione del metodo richiediCompletamento
   richiediCompletamento() {
     this.onRichiestaCompletamento.emit(this.todo!.id); // genero l'evento
-    // Emette l'ID dell'oggetto todo (di tipo number) tramite l'EventEmitter
-    // Il punto esclamativo (!) indica che siamo certi che this.todo non è null o undefined
-    // L'evento notifica i sottoscrittori (es. un componente genitore) passando l'ID del todo
+    // Questo codice "avvisa" il genitore passando il numero ID del todo.
+    // Il `!` significa che siamo sicuri che `this.todo` esiste e non è vuoto.
   }
 }
