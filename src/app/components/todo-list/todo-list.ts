@@ -2,10 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Todo } from '../../models/todo';
 import { TODOS } from '../../data/data';
 import { TodoItem } from "../todo-item/todo-item";
+import { TodoAdd } from "../todo-add/todo-add";
 
 @Component({
   selector: 'app-todo-list',
-  imports: [TodoItem],
+  imports: [TodoItem, TodoAdd],
   templateUrl: './todo-list.html',
   styleUrl: './todo-list.css'
 })

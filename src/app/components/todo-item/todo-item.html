@@ -4,9 +4,18 @@
     <!-- Questo codice usa `ngClass` per applicare uno stile CSS condizionale a un elemento. -->
     <!-- Aggiunge la classe `text-decoration-line-through` (testo barrato) se l'attività (`todo.completed`) è completata. -->
     <!-- Serve per mostrare visivamente che un'attività è stata completata, ad esempio in una lista di attività. -->
-    <button type="button" class="btn btn-success" (click)="richiediCompletamento()">
+    <button type="button" class="btn" [ngClass]="{ 'btn-success' : !todo.completed, 'btn-secondary' : todo.completed }"
+        (click)="richiediCompletamento()">
+        <!-- [[ngClass]=""] permette di aggiungere o rimuovere classi CSS a un elemento HTML in modo dinamico, in base a condizioni o espressioni definite nel componente -->
         <!-- Al click del botton (grazie a (click=""), faccio partire la funzione "richiediCompletamento()") -->
-        <i class="bi bi-check"></i>
+
+        @if(todo.completed){
+        <!-- <i class="bi bi-check"></i>Ripristina -->
+        <i class="bi bi-x"></i>Ripristina
+        } @else {
+        <i class="bi bi-check"></i>Completa
+        }
+
     </button>
 </div>
 }
