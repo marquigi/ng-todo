@@ -53,6 +53,9 @@ export class TodoList implements OnInit {
       completed: false
     }
     // Serve commento
+
+    this.todos.push(nuovoTodo);
+    // Serve commento
   }
 
 }
