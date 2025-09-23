@@ -25,4 +25,7 @@
 </div>
 <hr>
 <app-todo-add (onRichiestaInserimento)="inserisciNuovoTodo($event)"></app-todo-add>
-<!-- // Serve commento -->
+<!-- Componente figlio <app-todo-add> che gestisce l'inserimento di un nuovo todo.
+     Quando l'utente richiede l'inserimento, il figlio emette l'evento personalizzato "onRichiestaInserimento".
+     Il genitore intercetta l'evento e chiama il metodo "inserisciNuovoTodo($event)",
+     passando come parametro i dati inviati (es. il testo del nuovo todo). -->

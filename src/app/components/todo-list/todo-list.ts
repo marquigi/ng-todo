@@ -43,20 +43,20 @@ export class TodoList implements OnInit {
   inserisciNuovoTodo(testo: string) {
     // Qui ci sarà la richiesta ajax per inserire il todo 
     const ids: number[] = this.todos.map(t => t.id); // Transformo l'array di todos in array di id ( numbers )
-    // Serve commento (perchè?)
+    // Estraggo gli ID perché devo calcolare il massimo tra di essi per generare un nuovo ID univoco, evitando duplicati nell'array di todos
 
-    const nuovoId = Math.max(...ids) + 1
-    // Serve commento
+    const nuovoId = Math.max(...ids) + 1  // Math.max() è una funzione di JavaScript che trova il numero più grande tra quelli che gli passi.
+    // Calcolo il nuovo ID come il massimo ID esistente +1, per garantire un ID univoco e incrementale senza conflitti
 
     const nuovoTodo: Todo = {
       id: nuovoId,
       text: testo,
       completed: false
     }
-    // Serve commento
+    // Creo un nuovo oggetto Todo con l'ID generato, il testo fornito dall'utente e stato iniziale "non completato", per preparare il todo da aggiungere
 
     this.todos.push(nuovoTodo);
-    // Serve commento
+    // Aggiungo il nuovo todo all'array this.todos, aggiornando la lista nel componente e rendendola persistente per la visualizzazione e future operazioni
   }
 
 }
