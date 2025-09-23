@@ -12,6 +12,7 @@ import { TodoAdd } from "../todo-add/todo-add";
 })
 export class TodoList implements OnInit {
 
+
   todos: Todo[] = [];
 
   ngOnInit(): void {
