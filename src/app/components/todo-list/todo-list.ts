@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Todo } from '../../models/todo';
 import { TODOS } from '../../data/data';
 import { TodoItem } from "../todo-item/todo-item";
 import { TodoAdd } from "../todo-add/todo-add";
+import { TodoService } from '../../services/todo-service';
 
 @Component({
   selector: 'app-todo-list',
@@ -12,10 +13,26 @@ import { TodoAdd } from "../todo-add/todo-add";
 })
 export class TodoList implements OnInit {
 
+  // Alternativa 1 per richiedere un servizio: constructor
+  //constructor(private todoService: TodoService) {}
+  // constructor: Metodo speciale per creare il componente.
+  // private: Variabile visibile solo nella classe.
+  // todoService: Nome della variabile per il servizio.
+  // : TodoService: Tipo della variabile (il servizio).
+  // { }: Corpo vuoto del costruttore.  
+
+  // Alternativa 2 per richiedere un servizio: inject 
+  todoService: TodoService = inject(TodoService);
+  // todoService: Nome della variabile per il servizio.
+  // : TodoService: Tipo della variabile (il servizio).
+  // =: Assegna il servizio alla variabile.
+  // inject(TodoService): Funzione che recupera il servizio.
+
 
   todos: Todo[] = [];
 
   ngOnInit(): void {
+
     console.log("TodoList Loaded"); // Mostra un messaggio in console ("TodoList Loaded") per confermare che il componente è caricato.
     this.todos = TODOS; // Qui ci sarà la chiamata ajax
   }

@@ -8,10 +8,8 @@ import { TODOS } from '../data/data';
 export class TodoService {
   constructor() { }
 
-  todos: Todo[] = [];
-
   getTodo() {
     // Simula chiamata ajax al server per recuperare i todo
-    this.todos = TODOS;
+    return TODOS;
   }
 }
