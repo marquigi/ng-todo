@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Todo } from '../../models/todo';
-import { TODOS } from '../../data/data';
+// import { TODOS } from '../../data/data';
 import { TodoItem } from "../todo-item/todo-item";
 import { TodoAdd } from "../todo-add/todo-add";
 import { TodoService } from '../../services/todo-service';
@@ -32,9 +32,7 @@ export class TodoList implements OnInit {
   todos: Todo[] = [];
 
   ngOnInit(): void {
-
-    console.log("TodoList Loaded"); // Mostra un messaggio in console ("TodoList Loaded") per confermare che il componente è caricato.
-    this.todos = TODOS; // Qui ci sarà la chiamata ajax
+    this.todos = this.todoService.getTodo(); // Qui ci sarà la chiamata ajax
   }
   // Usa l'interfaccia `OnInit` per eseguire codice quando il componente è pronto.
   // `ngOnInit` è una funzione speciale di Angular che si avvia automaticamente dopo che il componente è stato creato e configurato.
