@@ -12,6 +12,7 @@ import { TodoService } from '../../services/todo-service';
   styleUrl: './todo-list.css'
 })
 export class TodoList implements OnInit {
+  // implements OnInit: Dice che la classe userà il metodo ngOnInit per eseguire codice all'avvio.
 
   // Alternativa 1 per richiedere un servizio: constructor
   //constructor(private todoService: TodoService) {}
@@ -29,15 +30,14 @@ export class TodoList implements OnInit {
   // inject(TodoService): Funzione che recupera il servizio.
 
 
-  todos: Todo[] = [];
+  todos: Todo[] = []; // Creo un array vuoto per avere già lo spazio pronto dove salvare i dati che arriveranno dal servizio
 
+  // Usa OnInit per eseguire codice all'avvio del componente.
   ngOnInit(): void {
     this.todos = this.todoService.getTodo(); // Qui ci sarà la chiamata ajax
   }
-  // Usa l'interfaccia `OnInit` per eseguire codice quando il componente è pronto.
-  // `ngOnInit` è una funzione speciale di Angular che si avvia automaticamente dopo che il componente è stato creato e configurato.
   // Nel metodo `ngOnInit`:
-  // - Imposta la lista delle attività (`todos`) usando i dati di `TODOS` per popolare l'elenco delle attività.
+  // Recupera la lista dei todo dal servizio e la assegna alla variabile `todos` così può essere mostrata nel template.
 
   completa(id: number) {
     console.log("Richiesta completamento todo con id:", id);

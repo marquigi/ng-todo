@@ -8,6 +8,7 @@ import { TODOS } from '../data/data';
 export class TodoService {
   constructor() { }
 
+  // Funzione che richiama i dati
   getTodo() {
     // Simula chiamata ajax al server per recuperare i todo
     return TODOS;
