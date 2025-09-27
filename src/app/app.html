@@ -1,10 +1,23 @@
 <div class="container p-2">
   <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-primary">Todo</button>
-    <button type="button" class="btn btn-primary">Auto</button>
+    <button type="button" class="btn btn-primary" (click)="select('todo')">Todo</button>
+    <button type="button" class="btn btn-primary" (click)="selectedSection = 'auto'">Auto</button>
   </div>
   <hr>
-  <app-auto-list></app-auto-list>
-  <h1>Todo list</h1>
-  <app-todo-list></app-todo-list>
+
+  @if (selectedSection == "auto") {
+  <!-- i tag <section> possono anche essere dei div -->
+  <section>
+    <h1>Auto</h1>
+    <app-auto-list></app-auto-list>
+  </section>
+  }
+
+  @if (selectedSection == "todo") {
+  <section>
+    <h1>Todo list</h1>
+    <app-todo-list></app-todo-list>
+  </section>
+  }
+
 </div>
