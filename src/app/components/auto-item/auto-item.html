@@ -4,6 +4,8 @@
         <h3>{{ auto.marca }}</h3>
         <h4>{{ auto.modello }}</h4>
         <p>{{ auto.prezzo | currency }}</p>
-        <button type="button" (click)="aggiungiACarrello()">Aggiungi a carrello</button>
+        <button type="button" (click)="aggiungiACarrello()" class="btn btn-primary">
+            <i class="bi bi-cart-fill"> Aggiungi al carrello</i>
+        </button>
     </div>
 </div>
