@@ -2,10 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { AutoService } from '../../services/auto-service';
 import { Auto } from '../../models/auto';
 import { CommonModule } from '@angular/common';
+import { AutoItem } from "../auto-item/auto-item";
 
 @Component({
   selector: 'app-auto-list',
-  imports: [CommonModule],
+  imports: [CommonModule, AutoItem],
   templateUrl: './auto-list.html',
   styleUrl: './auto-list.css'
 })

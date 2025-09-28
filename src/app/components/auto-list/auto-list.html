@@ -1,3 +1,7 @@
-<pre>
-    {{ autos | json }}
-</pre>
+<div class="d-flex gap-5">
+    <!-- @for (a of autos; track $index) {
+    <app-auto-item></app-auto-item>
+    } -->
+    <!-- Altro esempio di ciclo for -->
+    <app-auto-item *ngFor="let a of autos" [auto]="a"></app-auto-item>
+</div>

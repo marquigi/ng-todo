@@ -1,1 +1,6 @@
-<p>auto-item works!</p>
+<!-- Alternativa di @if -->
+<div *ngIf="auto">
+    <h3>{{ auto.marca }}</h3>
+    <h4>{{ auto.modello }}</h4>
+    <p>{{ auto.prezzo | currency }}</p>
+</div>
