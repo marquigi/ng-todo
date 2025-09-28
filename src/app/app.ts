@@ -1,13 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { TodoList } from "./components/todo-list/todo-list";
 import { AutoList } from "./components/auto-list/auto-list";
+import { CarrelloMini } from "./components/carrello-mini/carrello-mini";
 
 // Creo un tipo di nome 'Section' usando un *union type*: può essere solo "todo" o "auto" o "carello" o null
 type Section = "todo" | "auto" | "carrello" | null;
 
 @Component({
   selector: 'app-root',
-  imports: [TodoList, AutoList],
+  imports: [TodoList, AutoList, CarrelloMini],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
