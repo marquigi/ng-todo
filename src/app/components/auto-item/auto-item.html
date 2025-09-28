@@ -1,6 +1,9 @@
 <!-- Alternativa di @if -->
-<div *ngIf="auto">
-    <h3>{{ auto.marca }}</h3>
-    <h4>{{ auto.modello }}</h4>
-    <p>{{ auto.prezzo | currency }}</p>
+<div *ngIf="auto" class="card">
+    <div class="card-body">
+        <h3>{{ auto.marca }}</h3>
+        <h4>{{ auto.modello }}</h4>
+        <p>{{ auto.prezzo | currency }}</p>
+        <button type="button" (click)="aggiungiACarrello()">Aggiungi a carrello</button>
+    </div>
 </div>

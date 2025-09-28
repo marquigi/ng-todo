@@ -13,9 +13,15 @@ export class AutoItem {
   @Input()
   auto?: Auto;
 
-  carelloService: CarrelloService = inject(CarrelloService);
+  carrelloService: CarrelloService = inject(CarrelloService);
   // Creo una proprietà chiamata carelloService
   // Il tipo della proprietà è CarrelloService (importato sopra)
   // Con inject() ottengo l'oggetto reale (istanza) di quel servizio
   // Così posso usare carelloService dentro la classe AutoItem
+
+  // Funzione
+  aggiungiACarrello() {
+
+    this.carrelloService.aggiungiCarrello(this.auto!);
+  }
 }
